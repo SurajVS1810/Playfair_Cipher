@@ -424,18 +424,25 @@ public class Ceaser extends JFrame {
 					for(j=0;j<5;j++) {
 						
 						if(spl[y].charAt(0)==b[i][j]) {
-							for(x=0;x<5;x++) {
+							for(x=0;x<5;x++) {								
+								
 								if(spl[y].charAt(1)==b[i][x]) {
 									
-									if(j>0&&x>0) {
+									if(j!=0&&x!=0) {
 										row=(j-1)%5;
 										col=(x-1)%5;
 										sp[y]=Character.toString(b[i][row]);
 										sp[y]=sp[y]+b[i][col];
 									}
-									else {
-										row=4;
+									else if(j!=0&&x==0) {
+										row=(j-1)%5;
 										col=4;
+										sp[y]=Character.toString(b[i][row]);
+										sp[y]=sp[y]+b[i][col];
+									}
+									else if(j==0&&x!=0) {
+										row=4;
+										col=(x-1)%5;
 										sp[y]=Character.toString(b[i][row]);
 										sp[y]=sp[y]+b[i][col];
 									}
@@ -444,15 +451,21 @@ public class Ceaser extends JFrame {
 								}
 								else if(spl[y].charAt(1)==b[x][j]) {
 									
-									if(i>0&&x>0) {
+									if(i!=0&&x!=0) {
 										row=(i-1)%5;
 										col=(x-1)%5;
 										sp[y]=Character.toString(b[row][j]);
 										sp[y]=sp[y]+b[col][j];
 									}
-									else {
-										row=4;
+									else if(i!=0&&x==0) {
+										row=(i-1)%5;
 										col=4;
+										sp[y]=Character.toString(b[row][j]);
+										sp[y]=sp[y]+b[col][j];
+									}
+									else if(i==0&&x!=0) {
+										row=4;
+										col=(x-1)%5;
 										sp[y]=Character.toString(b[row][j]);
 										sp[y]=sp[y]+b[col][j];
 									}
@@ -499,7 +512,7 @@ public class Ceaser extends JFrame {
 				
 				t6.setText(enc);
 				
-				System.out.println();
+				System.out.println();				
 				
 				System.out.println("---------------------------------------");
 				
