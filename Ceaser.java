@@ -95,6 +95,7 @@ public class Ceaser extends JFrame {
 						
 					}
 				}
+				System.out.println();
 				
 				System.out.println("Plaintext : "+pt);
 				
@@ -164,7 +165,6 @@ public class Ceaser extends JFrame {
 				
 				System.out.println();
 				
-				String dec="";
 				int row,col,r,v;
 				String[] sp=new String[50];
 				
@@ -181,26 +181,24 @@ public class Ceaser extends JFrame {
 									sp[y]=sp[y]+b[i][col];
 									break;
 								}
-								if(spl[y].charAt(1)==b[x][j]) {
+								else if(spl[y].charAt(1)==b[x][j]) {
 									row=(i+1)%5;
 									col=(x+1)%5;
 									sp[y]=Character.toString(b[row][j]);
 									sp[y]=sp[y]+b[col][j];
 									break;
 								}
-//								else {
-//									for(r=0;r<5;r++) {
-//										for(v=0;v<5;v++) {
-//											if(spl[y].charAt(1)==b[r][v]) {
-//												sp[y]=Character.toString(b[i][v]);
-//												sp[y]=sp[y]+b[r][j];
-//												break;
-//											}
-//										}
-//										
-//									}
-//									break;
-//								}
+								
+									for(r=0;r<5;r++) {
+										for(v=0;v<5;v++) {
+											if(spl[y].charAt(1)==b[r][v]) {
+												sp[y]=Character.toString(b[i][v]);
+												sp[y]=sp[y]+b[r][j];
+												break;
+											}
+										}
+										
+									}								
 							}
 						}
 					}
@@ -213,7 +211,13 @@ public class Ceaser extends JFrame {
 				
 				System.out.println();
 				
-			//	t2.setText();
+				String enc="";
+				
+				for(i=0;i<sb.length()/2;i++) {
+					enc=enc+sp[i];
+				}
+				
+				t3.setText(enc);
 			}
 		});
 		b1.setBounds(328, 76, 85, 23);
