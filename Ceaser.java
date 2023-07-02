@@ -99,12 +99,19 @@ public class Ceaser extends JFrame {
 					}
 				}
 				System.out.println();
+				System.out.println("Encryption");
+				
+				System.out.println("---------------------------------------");
 				
 				System.out.println("Plaintext : "+pt);
 				
 				System.out.println();
 				
-				System.out.println(sb);
+				System.out.println("Modified plaintext : "+sb);
+				
+				System.out.println();
+				
+				System.out.println("Split plaintext");
 				
 				System.out.println();
 				
@@ -159,6 +166,11 @@ public class Ceaser extends JFrame {
 					}	
 				}
 				
+				System.out.println("Square Matrix");
+				
+				System.out.println();
+				
+				
 				for(i=0;i<5;i++) {
 					for(j=0;j<5;j++) {
 						System.out.print(b[i][j]+"  ");
@@ -207,6 +219,11 @@ public class Ceaser extends JFrame {
 					}
 					}
 				}
+				
+				System.out.println("Encrpted text splited");
+				
+				System.out.println();
+				
 				for(i=0;i<sb.length()/2;i++) {
 				
 				System.out.print(sp[i]+" ");
@@ -221,6 +238,10 @@ public class Ceaser extends JFrame {
 				}
 				
 				t3.setText(enc);
+				
+				System.out.println();
+				
+				System.out.println("---------------------------------------");
 			}
 		});
 		b1.setBounds(328, 76, 85, 23);
@@ -276,6 +297,211 @@ public class Ceaser extends JFrame {
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				char[] a= {'a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+				String pt=t4.getText();
+				
+				
+				pt=pt.toLowerCase().replaceAll("\\s", "");
+				
+				StringBuffer sb=new StringBuffer(pt);
+				
+				int i,j,u=0;
+				String[] spl=new String[50];
+				String ch="";
+				
+
+				for(i=0,j=1;j<=sb.length();j=j+2,i=i+2) {
+					if(j==sb.length()&&j%2!=0) {
+						sb=sb.append('z');
+					}
+					
+					if(sb.charAt(i)!=sb.charAt(j)) {
+						
+						ch = Character.toString(sb.charAt(i));
+						ch=ch+sb.charAt(j);
+						spl[u]=ch;
+						u++;
+						
+					}
+					else {
+						ch = Character.toString(sb.charAt(i));
+
+						sb=sb.insert(j, 'x');
+						ch=ch+sb.charAt(j);
+
+						spl[u]=ch;
+						u++;
+						
+					}
+				}
+				System.out.println();
+				System.out.println("Decryption");
+				
+				System.out.println("---------------------------------------");
+				
+				System.out.println("Decrypted text : "+pt);
+				
+				System.out.println();
+				
+				System.out.println("Modified decrypted text : "+sb);
+				
+				System.out.println();
+				
+				System.out.println("Split decrypted text");
+				
+				System.out.println();
+				
+				
+				for(i=0;i<sb.length()/2;i++){
+					System.out.print(spl[i]+" ");					
+				}
+			
+				System.out.println();
+				System.out.println();
+				
+				
+				String s=t5.getText();
+				s=s.toLowerCase().replaceAll("\\s", "");
+				char[][] b=new char[5][5];
+				char[] c=new char[30];
+				char[] d=new char[30];
+				
+				int k=0,p=0,z=0;
+				int x,y;
+				
+				
+				for(x=0;x<s.length();x++) {
+					c[x]=s.charAt(x);
+					
+				}
+				
+				for (x = 0; x < a.length; x++)
+		        {		            		        
+		            for (y = 0; y < c.length; y++)
+		                if (a[x] == c[y])
+		                    break;		 
+		            if (y == c.length) {
+		                d[p]=a[x];
+		                p++;
+		            }
+		        }
+				
+				
+				int m=s.length();
+				for(i=0;i<5;i++) {
+					for(j=0;j<5;j++){
+						if(k<m) {
+							b[i][j]=s.charAt(k);			
+						}
+						else {
+							
+							b[i][j]=d[z];
+							z++;
+						}
+						k++;
+					}	
+				}
+				
+				System.out.println("Square Matrix");
+				
+				System.out.println();
+				
+				
+				for(i=0;i<5;i++) {
+					for(j=0;j<5;j++) {
+						System.out.print(b[i][j]+"  ");
+					}
+					System.out.println();
+				}
+				
+				System.out.println();
+				
+				int row,col,r,v;
+				String[] sp=new String[50];
+				
+				for(y=0;y<sb.length()/2;y++) {
+				for(i=0;i<5;i++) {
+					for(j=0;j<5;j++) {
+						
+						if(spl[y].charAt(0)==b[i][j]) {
+							for(x=0;x<5;x++) {
+								if(spl[y].charAt(1)==b[i][x]) {
+									
+									if(j>0&&x>0) {
+										row=(j-1)%5;
+										col=(x-1)%5;
+										sp[y]=Character.toString(b[i][row]);
+										sp[y]=sp[y]+b[i][col];
+									}
+									else {
+										row=4;
+										col=4;
+										sp[y]=Character.toString(b[i][row]);
+										sp[y]=sp[y]+b[i][col];
+									}
+									
+									break;
+								}
+								else if(spl[y].charAt(1)==b[x][j]) {
+									
+									if(i>0&&x>0) {
+										row=(i-1)%5;
+										col=(x-1)%5;
+										sp[y]=Character.toString(b[row][j]);
+										sp[y]=sp[y]+b[col][j];
+									}
+									else {
+										row=4;
+										col=4;
+										sp[y]=Character.toString(b[row][j]);
+										sp[y]=sp[y]+b[col][j];
+									}
+									break;
+								}
+								
+									for(r=0;r<5;r++) {
+										for(v=0;v<5;v++) {
+											if(spl[y].charAt(1)==b[r][v]) {
+												sp[y]=Character.toString(b[i][v]);
+												sp[y]=sp[y]+b[r][j];
+												
+												break;
+											}
+										}
+										
+									}								
+							}
+						}
+					}
+					}
+				}
+				
+				System.out.println("Decrpted text splited");
+				
+				System.out.println();
+				
+				for(i=0;i<sb.length()/2;i++) {
+				
+				System.out.print(sp[i]+" ");
+				}
+				
+				System.out.println();
+				
+				String enc="";
+				
+				for(i=0;i<sb.length()/2;i++) {
+					enc=enc+sp[i];
+				}
+				
+				enc=enc.replace("z", "");
+				
+				enc=enc.replace("x", "");
+				
+				t6.setText(enc);
+				
+				System.out.println();
+				
+				System.out.println("---------------------------------------");
 				
 			}
 		});
