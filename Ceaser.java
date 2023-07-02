@@ -17,6 +17,9 @@ public class Ceaser extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField t3;
+	private JTextField t4;
+	private JTextField t5;
+	private JTextField t6;
 
 	/**
 	 * Launch the application.
@@ -48,11 +51,11 @@ public class Ceaser extends JFrame {
 		
 		JTextPane t1 = new JTextPane();
 		t1.setText("");
-		t1.setBounds(184, 33, 113, 20);
+		t1.setBounds(169, 33, 208, 20);
 		contentPane.add(t1);
 		
 		JTextArea t2 = new JTextArea();
-		t2.setBounds(184, 75, 113, 22);
+		t2.setBounds(169, 75, 128, 22);
 		contentPane.add(t2);
 		
 		JButton b1 = new JButton("Encrypt");
@@ -224,7 +227,7 @@ public class Ceaser extends JFrame {
 		contentPane.add(b1);
 		
 		t3 = new JTextField();
-		t3.setBounds(180, 124, 117, 20);
+		t3.setBounds(169, 124, 208, 20);
 		contentPane.add(t3);
 		t3.setColumns(10);
 		
@@ -241,6 +244,43 @@ public class Ceaser extends JFrame {
 		JLabel enc = new JLabel("Encrypted data : ");
 		enc.setBounds(37, 127, 104, 14);
 		contentPane.add(enc);
+		
+		t4 = new JTextField();
+		t4.setBounds(169, 189, 208, 20);
+		contentPane.add(t4);
+		t4.setColumns(10);
+		
+		t5 = new JTextField();
+		t5.setBounds(169, 239, 128, 20);
+		contentPane.add(t5);
+		t5.setColumns(10);
+		
+		t6 = new JTextField();
+		t6.setBounds(169, 291, 208, 20);
+		contentPane.add(t6);
+		t6.setColumns(10);
+		
+		JLabel l4 = new JLabel("Enter the Encrypted data : ");
+		l4.setBounds(10, 192, 148, 14);
+		contentPane.add(l4);
+		
+		JLabel l5 = new JLabel("Enter the key : ");
+		l5.setBounds(37, 242, 104, 14);
+		contentPane.add(l5);
+		
+		JLabel l6 = new JLabel("Plaintext : ");
+		l6.setBounds(37, 294, 85, 14);
+		contentPane.add(l6);
+		
+		JButton b2 = new JButton("Decrypt");
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		b2.setBounds(328, 238, 85, 23);
+		contentPane.add(b2);
 		
 		
 		
