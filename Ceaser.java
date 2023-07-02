@@ -165,7 +165,7 @@ public class Ceaser extends JFrame {
 				System.out.println();
 				
 				String dec="";
-				int row,col,r;
+				int row,col,r,v;
 				String[] sp=new String[50];
 				
 				for(y=0;y<sb.length()/2;y++) {
@@ -179,15 +179,27 @@ public class Ceaser extends JFrame {
 									col=(x+1)%5;
 									sp[y]=Character.toString(b[i][row]);
 									sp[y]=sp[y]+b[i][col];
+									break;
 								}
-								else if(spl[y].charAt(1)==b[x][j]) {
+								if(spl[y].charAt(1)==b[x][j]) {
 									row=(i+1)%5;
 									col=(x+1)%5;
 									sp[y]=Character.toString(b[row][j]);
 									sp[y]=sp[y]+b[col][j];
+									break;
 								}
 //								else {
-//									sp[y]="ss";
+//									for(r=0;r<5;r++) {
+//										for(v=0;v<5;v++) {
+//											if(spl[y].charAt(1)==b[r][v]) {
+//												sp[y]=Character.toString(b[i][v]);
+//												sp[y]=sp[y]+b[r][j];
+//												break;
+//											}
+//										}
+//										
+//									}
+//									break;
 //								}
 							}
 						}
