@@ -67,6 +67,8 @@ public class Ceaser extends JFrame {
 				
 				pt=pt.toLowerCase().replaceAll("\\s", "");
 				
+				pt=pt.replaceAll("j", "i");
+				
 				StringBuffer sb=new StringBuffer(pt);
 				
 				int i,j,u=0;
@@ -299,13 +301,15 @@ public class Ceaser extends JFrame {
 				
 				char[] a= {'a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 				String pt=t4.getText();
-				
-				
+				int i,j,u=0;
+												
 				pt=pt.toLowerCase().replaceAll("\\s", "");
+				
+				pt=pt.replaceAll("j", "i");
 				
 				StringBuffer sb=new StringBuffer(pt);
 				
-				int i,j,u=0;
+				
 				String[] spl=new String[50];
 				String ch="";
 				
