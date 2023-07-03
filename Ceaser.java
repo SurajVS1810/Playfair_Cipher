@@ -130,9 +130,10 @@ public class Ceaser extends JFrame {
 				
 				String s=t2.getText();
 				s=s.toLowerCase().replaceAll("\\s", "");
+				s=s.replaceAll("j", "i");
 				char[][] b=new char[5][5];
 //				char[] c=new char[30];
-				char[] d=new char[30];
+				char[] d=new char[30];								
 				
 				char[] c=s.toCharArray();
 				
@@ -415,9 +416,10 @@ public class Ceaser extends JFrame {
 				
 				String s=t5.getText();
 				s=s.toLowerCase().replaceAll("\\s", "");
+				s=s.replaceAll("j", "i");
 				char[][] b=new char[5][5];
 //				char[] c=new char[30];
-				char[] d=new char[30];
+				char[] d=new char[30];						
 				
 				char[] c=s.toCharArray();
 				
