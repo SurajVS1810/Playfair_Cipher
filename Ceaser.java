@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -129,17 +131,64 @@ public class Ceaser extends JFrame {
 				String s=t2.getText();
 				s=s.toLowerCase().replaceAll("\\s", "");
 				char[][] b=new char[5][5];
-				char[] c=new char[30];
+//				char[] c=new char[30];
 				char[] d=new char[30];
+				
+				char[] c=s.toCharArray();
+				
+				String dis="";
 				
 				int k=0,p=0,z=0;
 				int x,y;
 				
+
+//		        HashMap<Character,Integer> map= new HashMap<>();
+//		        /*
+//		        //Traverse through the String and put each
+//		        // distinct character into the HashMap with frequency 1.
+//		        //if any character is already present in hashmap
+//		        //add 1 to it's freuency */
+//		 
+//		        for(char f:s.toCharArray()){
+//		            if(!map.containsKey(f))
+//		            {
+//		                map.put(f,1);
+//		            }else{
+//		                int freq= map.get(f);
+//		                map.put(f,freq+1);
+//		            }
+//		        }				
+//		        for(Map.Entry<Character,Integer> w:map.entrySet()){	
+//					dis=dis+w.getKey();
+//			            System.out.println(w.getKey()+" -> "+w.getValue());
+//		        }
+//		        System.out.println(dis);
 				
-				for(x=0;x<s.length();x++) {
-					c[x]=s.charAt(x);
-					
+//				for(x=0;x<s.length();x++) {
+//					c[x]=s.charAt(x);
+//					
+//				}
+				
+				
+				
+				System.out.println("Distinct characters of key");
+				
+				System.out.println();
+				
+				for(i=0;i<c.length;i++) {
+					for(j=i+1;j<c.length;j++) {
+						if(c[i]==c[j]) {
+							c[j]=' ';
+						}
+					}
+					if(c[i]!=' ') {
+						System.out.print(c[i]+" ");
+						dis=dis+c[i];
+					}
 				}
+				
+				System.out.println();
+				System.out.println();
 				
 				for (x = 0; x < a.length; x++)
 		        {		            		        
@@ -153,11 +202,11 @@ public class Ceaser extends JFrame {
 		        }
 				
 				
-				int m=s.length();
+				int m=dis.length();
 				for(i=0;i<5;i++) {
 					for(j=0;j<5;j++){
 						if(k<m) {
-							b[i][j]=s.charAt(k);			
+							b[i][j]=dis.charAt(k);			
 						}
 						else {
 							
@@ -367,17 +416,40 @@ public class Ceaser extends JFrame {
 				String s=t5.getText();
 				s=s.toLowerCase().replaceAll("\\s", "");
 				char[][] b=new char[5][5];
-				char[] c=new char[30];
+//				char[] c=new char[30];
 				char[] d=new char[30];
+				
+				char[] c=s.toCharArray();
+				
+				String dis="";
 				
 				int k=0,p=0,z=0;
 				int x,y;
 				
 				
-				for(x=0;x<s.length();x++) {
-					c[x]=s.charAt(x);
-					
+//				for(x=0;x<s.length();x++) {
+//					c[x]=s.charAt(x);
+//					
+//				}
+				
+				System.out.println("Distinct characters of key");
+				
+				System.out.println();
+				
+				for(i=0;i<c.length;i++) {
+					for(j=i+1;j<c.length;j++) {
+						if(c[i]==c[j]) {
+							c[j]=' ';
+						}
+					}
+					if(c[i]!=' ') {
+						System.out.print(c[i]+" ");
+						dis=dis+c[i];
+					}
 				}
+				
+				System.out.println();
+				System.out.println();
 				
 				for (x = 0; x < a.length; x++)
 		        {		            		        
@@ -391,11 +463,11 @@ public class Ceaser extends JFrame {
 		        }
 				
 				
-				int m=s.length();
+				int m=dis.length();
 				for(i=0;i<5;i++) {
 					for(j=0;j<5;j++){
 						if(k<m) {
-							b[i][j]=s.charAt(k);			
+							b[i][j]=dis.charAt(k);			
 						}
 						else {
 							
