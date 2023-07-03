@@ -65,8 +65,7 @@ public class Ceaser extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				char[] a= {'a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 				String pt=t1.getText();
-				
-				
+								
 				pt=pt.toLowerCase().replaceAll("\\s", "");
 				
 				pt=pt.replaceAll("j", "i");
@@ -115,7 +114,7 @@ public class Ceaser extends JFrame {
 				
 				System.out.println();
 				
-				System.out.println("Split plaintext");
+				System.out.println("Split plaintext : ");
 				
 				System.out.println();
 				
@@ -126,13 +125,12 @@ public class Ceaser extends JFrame {
 			
 				System.out.println();
 				System.out.println();
-				
-				
+								
 				String s=t2.getText();
 				s=s.toLowerCase().replaceAll("\\s", "");
 				s=s.replaceAll("j", "i");
 				char[][] b=new char[5][5];
-//				char[] c=new char[30];
+
 				char[] d=new char[30];								
 				
 				char[] c=s.toCharArray();
@@ -141,38 +139,8 @@ public class Ceaser extends JFrame {
 				
 				int k=0,p=0,z=0;
 				int x,y;
-				
-
-//		        HashMap<Character,Integer> map= new HashMap<>();
-//		        /*
-//		        //Traverse through the String and put each
-//		        // distinct character into the HashMap with frequency 1.
-//		        //if any character is already present in hashmap
-//		        //add 1 to it's freuency */
-//		 
-//		        for(char f:s.toCharArray()){
-//		            if(!map.containsKey(f))
-//		            {
-//		                map.put(f,1);
-//		            }else{
-//		                int freq= map.get(f);
-//		                map.put(f,freq+1);
-//		            }
-//		        }				
-//		        for(Map.Entry<Character,Integer> w:map.entrySet()){	
-//					dis=dis+w.getKey();
-//			            System.out.println(w.getKey()+" -> "+w.getValue());
-//		        }
-//		        System.out.println(dis);
-				
-//				for(x=0;x<s.length();x++) {
-//					c[x]=s.charAt(x);
-//					
-//				}
-				
-				
-				
-				System.out.println("Distinct characters of key");
+																
+				System.out.println("Distinct characters of key : ");
 				
 				System.out.println();
 				
@@ -272,7 +240,7 @@ public class Ceaser extends JFrame {
 					}
 				}
 				
-				System.out.println("Encrpted text splited");
+				System.out.println("Encrpted text splited : ");
 				
 				System.out.println();
 				
@@ -401,7 +369,7 @@ public class Ceaser extends JFrame {
 				
 				System.out.println();
 				
-				System.out.println("Split decrypted text");
+				System.out.println("Split decrypted text : ");
 				
 				System.out.println();
 				
@@ -418,7 +386,7 @@ public class Ceaser extends JFrame {
 				s=s.toLowerCase().replaceAll("\\s", "");
 				s=s.replaceAll("j", "i");
 				char[][] b=new char[5][5];
-//				char[] c=new char[30];
+
 				char[] d=new char[30];						
 				
 				char[] c=s.toCharArray();
@@ -429,12 +397,7 @@ public class Ceaser extends JFrame {
 				int x,y;
 				
 				
-//				for(x=0;x<s.length();x++) {
-//					c[x]=s.charAt(x);
-//					
-//				}
-				
-				System.out.println("Distinct characters of key");
+				System.out.println("Distinct characters of key : ");
 				
 				System.out.println();
 				
@@ -567,7 +530,7 @@ public class Ceaser extends JFrame {
 					}
 				}
 				
-				System.out.println("Decrpted text splited");
+				System.out.println("Decrpted text splited : ");
 				
 				System.out.println();
 				
@@ -598,8 +561,7 @@ public class Ceaser extends JFrame {
 		});
 		b2.setBounds(328, 238, 85, 23);
 		contentPane.add(b2);
-		
-		
+				
 		
 	}
 }
